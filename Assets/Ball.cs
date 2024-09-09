@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] GameObject[] ballPrefab; 
-    [SerializeField] float secondSpawn = 2f;
+    [SerializeField] float secondSpawn = 5f;
     [SerializeField] float increaseFactor = 0.75f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
