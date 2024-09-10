@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpriteEffect : MonoBehaviour
 {
-    private ParticleSystem lightningSpeed; 
+    private ParticleSystem lightningSpeed; // Renamed from particleSystem
     private bool isMoving = false;
 
     void Start()
