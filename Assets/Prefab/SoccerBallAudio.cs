@@ -17,11 +17,9 @@ public class SoccerBallAudio : MonoBehaviour
         // Check if the ball collided with the sprite
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("balls");
             // Play the bounce sound
             if (audioSource != null)
             {
-                Debug.Log("soccer ball hit noise");
                 audioSource.Play();
             }
         }

@@ -10,6 +10,10 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 
+    public float hitStopDuration = 0.1f; 
+    public float hitStopTimeScale = 0.0f;
+    private bool isHitstopActive = false;
+
     [ContextMenu("Increase Score")]
     public void addScore(){
         playerScore+=1;
@@ -22,5 +26,24 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver() {
         gameOverScreen.SetActive(true);
+    }
+
+    public void StartHitstop()
+    {
+        if (!isHitstopActive)
+        {
+            StartCoroutine(Hitstop());
+        }
+    }
+
+    // hitstop coroutine
+    private IEnumerator Hitstop()
+    {
+        isHitstopActive = true;
+        float originalTimeScale = Time.timeScale;
+        Time.timeScale = hitStopTimeScale;
+        yield return new WaitForSecondsRealtime(hitStopDuration);
+        Time.timeScale = originalTimeScale;
+        isHitstopActive = false;
     }
 }
