@@ -6,27 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
-    public int playerScore = 0; 
-    public Text scoreText;
-    public GameObject gameOverScreen;
 
     public float hitStopDuration = 0.1f; 
     public float hitStopTimeScale = 0.0f;
     private bool isHitstopActive = false;
-
-    [ContextMenu("Increase Score")]
-    public void addScore(){
-        playerScore+=1;
-        scoreText.text = playerScore.ToString();
-    }
-
-    public void restartGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void gameOver() {
-        gameOverScreen.SetActive(true);
-    }
 
     public void StartHitstop()
     {

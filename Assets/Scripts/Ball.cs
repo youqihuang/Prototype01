@@ -6,7 +6,6 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] GameObject[] ballPrefab; 
     [SerializeField] float secondSpawn = 5f;
-    [SerializeField] float increaseFactor = 0.75f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
     [SerializeField] public LogicScript logicManager;
@@ -20,15 +19,6 @@ public class Ball : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void Kick()
-    {
-        logicManager.addScore();
-        // increase speed
-        if (logicManager.playerScore % 5 == 0){
-            secondSpawn *= increaseFactor;
-        }
     }
 
     IEnumerator BallSpawn() {
